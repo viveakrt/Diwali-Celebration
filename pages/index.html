@@ -85,68 +85,23 @@ a{
 {% block content %}
 <body>
     <div class="container">
-        <h2>I'm Vivek :)</h2>
-        <h1>This is Diwali Celebration</h1>
+        <h2>This is </h2>
+        <h1>Diwali Celebration</h1>
         <h3>Create your Diwali Link</h3>
-        <p><a href="" > <b>Fork</b> </a> the Repository<br><br><br>
-        Create html file in folder pages/ "Your Name.html" <br>
-        commit and send a pull request<br>
-        Done Your site is active as soon as pull request get accepted
+        <p><a href="https://github.com/Vivskecher/Diwali-Celebration/fork" > <b>Fork</b> </a> the Repository<br><br><br>
+        
+            Read <a href="https://github.com/Vivskecher/Diwali-Celebration/" >README.md</a> For details
          </p>
         <p>
             <a href="https://twitter.com/vivek12348" target="_blank"><img src="{% static '/images/twitter.svg' %}" alt="twitter"/> </a>
             <a href="https://github.com/vivskecher" target="_blank"><img src="{% static '/images/github.svg' %}" alt="github"/> </a>
             <a href="https://instagram.com/vivsketcher" target="_blank"><img src="{% static '/images/instagram.svg' %}" alt="instagram" /></a>
         </p>
+        <h4>I'm Vivek :)</h4>
     </div>
-    <script>
-        let w = 1400;
-let h = 1400;
-let scale = 20;
-let rows = (h / scale);
-let cols = (w / scale);
-let mountains = [];
-let fly = 0;
-
-function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL);
-    background(0);
-}
-
-function draw() {
-    orbitControl();
-    background(0);
-    fly += .05;
-
-    let yOff = fly;
-
-    for (let i = 0; i < rows; i++) {
-        mountains[i] = [];
-        let xOff = 0;
-        for (let j = 0; j < cols; j++) {
-            mountains[i][j] = map(noise(xOff, yOff), 0, 1, -40, 60);
-            xOff += 0.3;
-        }
-        yOff += 0.3;
-    }
-
-    fill(166);
-    
-    rotateX(PI / 3);
-    translate(-w / 2, -h / 2);
-
-    for (let i = 0; i < rows; i++) {
-        beginShape(TRIANGLE_STRIP);
-        for (let j = 0; j < cols; j++) {
-            vertex(j * scale, i * scale, mountains[j][i]);
-            vertex(j * scale, (i + 1) * scale, mountains[j][i]);
-        }
-        endShape();
-    }
-}
-setInterval(setup, 0.10);
-    </script>
+   
 </body>
+
 
 
 {% endblock %}
