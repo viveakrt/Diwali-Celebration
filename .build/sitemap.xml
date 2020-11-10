@@ -6,6 +6,11 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>/Vivek.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>/Your Name.html</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>

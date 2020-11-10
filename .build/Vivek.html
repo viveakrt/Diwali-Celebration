@@ -7,9 +7,9 @@
   </style>
   <title>Diwali Celebration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="{{ CURRENT_PAGE.absolute_final_url }}" />
+  <link rel="canonical" href="/Vivek.html" />
   <style>
-  {% block stylee %}
+  
     canvas {
       position: absolute;
       top: 0;
@@ -37,11 +37,11 @@
   body {
       overflow: hidden;
   }
-  {% endblock  %}
+  
   </style>
   
 </head>
-{% block content %}
+
 <body>
   
 
@@ -59,7 +59,11 @@
         hh = h / 2,
         
         opts = {
-            strings: [ {% block greet %} {% endblock %} '-----------------------','||     Happy Diwali     ||','-----------------------', 'From' , unescape(filename)],
+            strings: [ 'A festival full of sweet memories',
+'sky full of fireworks ',
+'mouth full of sweets',
+'house full of diyas and heart full of enjoyment',
+ '-----------------------','||     Happy Diwali     ||','-----------------------', 'From' , unescape(filename)],
             charSize: 30,
             charSpacing: 35,
             lineHeight: 40,
@@ -458,5 +462,5 @@ window.addEventListener( 'resize', function(){
 
 </body>
 
-{% endblock  %}
+
 </html>

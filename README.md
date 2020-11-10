@@ -34,5 +34,16 @@ Step 7 : Your Site is Ready
 4.  
 5.  
 ##
-
-
+## Extra Greeting
+You Can add Some Extra Greeting in {% block greet %} 'your qoute', {% endblock %}
+```django
+{% block greet %}
+'A festival full of sweet memories',
+'sky full of fireworks ',
+'mouth full of sweets',
+'house full of diyas and heart',
+'full of enjoyment',
+{% endblock %}
+```
+##
+##
