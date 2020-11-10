@@ -1,7 +1,7 @@
 ## Diwali Celebrations
 
 Copy This Code and Paste in "Your Name.html"
-```HTML
+```django
 {% extends "base.html" %}
 {% block body %}
 {% endblock %}
