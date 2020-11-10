@@ -9,53 +9,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="/index.html" />
   <style>
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
+  
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+html { 
+height: 100%;
+}
+body{
+  font-family: 'Roboto Mono', monospace;
+  overflow:hidden;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  margin: 0;
+  background-color: black ;
+  color: #a6a6a6;
+}
+.container {
+  padding-top: 2rem;
+  position: relative;
+  top: 2rem;
+}
+a{
+  text-decoration: none;
+}
+.container h1{
+  color: white;
+  font-size: 190%;
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .1em solid #a6a6a6; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(10, end) forwards ,
+    blink-caret .75s step-end infinite ;
+    
+}
+@media (min-width: 1170px){
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 28% }
+}
+}
+@media (max-width: 1169.99px){
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 37% }
+}
+}
+@media (max-width: 969.99px){
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 45% }
+}
+}
+@media (max-width: 769.99px){
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 70% }
+}
+}
+@media (max-width: 469.99px){
+  .container h1{
+    letter-spacing: 80%; 
+    font-size: 150%;
   }
-  p {
-      margin: 0 0;
-      position: absolute;
-      font: 16px Verdana;
-      color: #eee;
-      height: 25px;
-      top: calc( 100vh - 30px );
-      text-shadow: 0 0 2px white;
-  }
-  p a {
-      text-decoration: none;
-      color: #aaa;
-  }
-  span {
-      font-size: 11px;
-  }
-  p > a:first-of-type {
-      font-size: 20px;
-  }
-  body {
-      overflow: hidden;
-  }
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 85% }
+}
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from { border-color: transparent }
+  to { border-color: transparent ;
+        opacity: 0; }
+  50% { border-color: white; }
+}
+
   </style>
   
 </head>
 <body>
-  
+    <div class="container">
+        <h2>Diwali Celebration</h2>
+        <h1>I'm Vivek :)</h1>
+        <p><a href="" > <b>Fork</b> </a> the Repository<br>
+        Create html file in folder pages/ "Your Name.html" <br>
+        commit and send a pull request<br>
+        Done Your site is active as soon as pull request get accepted
+         </p>
+        <p>
+            <a href="https://twitter.com/vivek12348" target="_blank"><img src="/static/images/twitter.svg" alt="twitter"/> </a>
+            <a href="https://github.com/vivskecher" target="_blank"><img src="/static/images/github.svg" alt="github"/> </a>
+            <a href="https://instagram.com/vivsketcher" target="_blank"><img src="/static/images/instagram.svg" alt="instagram" /></a>
+        </p>
+    </div>
+    <script>
+        let w = 1400;
+let h = 1400;
+let scale = 20;
+let rows = (h / scale);
+let cols = (w / scale);
+let mountains = [];
+let fly = 0;
 
-<h1>
-    New Erras
-</h1>
+function setup() {
+    createCanvas(windowWidth, windowHeight, WEBGL);
+    background(0);
+}
 
+function draw() {
+    orbitControl();
+    background(0);
+    fly += .05;
+
+    let yOff = fly;
+
+    for (let i = 0; i < rows; i++) {
+        mountains[i] = [];
+        let xOff = 0;
+        for (let j = 0; j < cols; j++) {
+            mountains[i][j] = map(noise(xOff, yOff), 0, 1, -40, 60);
+            xOff += 0.3;
+        }
+        yOff += 0.3;
+    }
+
+    fill(166);
     
-      
+    rotateX(PI / 3);
+    translate(-w / 2, -h / 2);
 
-
-
-
-
-
-
-
+    for (let i = 0; i < rows; i++) {
+        beginShape(TRIANGLE_STRIP);
+        for (let j = 0; j < cols; j++) {
+            vertex(j * scale, i * scale, mountains[j][i]);
+            vertex(j * scale, (i + 1) * scale, mountains[j][i]);
+        }
+        endShape();
+    }
+}
+setInterval(setup, 0.10);
+    </script>
 </body>
+
+
 
 </html>
