@@ -9,6 +9,8 @@ Copy This Code and Paste in "Your Name.html"
 {% block body %}
 {% endblock %}
 ```
+## YouTube Video 👇
+[![Video](http://img.youtube.com/vi/p1-h4GmcDn4/0.jpg)](http://www.youtube.com/watch?v=p1-h4GmcDn4 "")
 
 ## How To Create Your Diwali Link
 ```
