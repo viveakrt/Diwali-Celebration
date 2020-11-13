@@ -59,7 +59,7 @@
         hh = h / 2,
         
         opts = {
-            strings: [ {% block greet %} {% endblock %} '-----------------------','||     Happy Diwali     ||','-----------------------', 'From' , unescape(filename)],
+            strings: [{% block greet %} {% endblock %} '-----------------------','||     Happy Diwali     ||','-----------------------', {% block to %} 'From'{% endblock %} , unescape(filename)],
             charSize: 30,
             charSpacing: 35,
             lineHeight: 40,
